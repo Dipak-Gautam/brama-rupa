@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <div className="m-7">
+    <div className="m-3 md:m-7">
       <div className="bg-[url('./FoodHeroImage.jpeg')] md:h-[700px] bg-cover  rounded-lg  bg-no-repeat flex items-center py-16 md:py-10 p-10">
         <div className="text-glow">
           <div className="text-2xl md:text-4xl lg:text-6xl font-bold text-white ">
