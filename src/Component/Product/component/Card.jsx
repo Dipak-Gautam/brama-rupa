@@ -5,6 +5,14 @@ import { useState } from "react";
 
 const Card = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
+  const [cartBoolean, setCartBoolean] = useState(false);
+
+  const addItemToCart = () => {
+    if (!cartBoolean) {
+      console.log(" order is coming");
+    }
+  };
+
   return (
     <>
       <div
@@ -24,15 +32,31 @@ const Card = ({ data }) => {
               <StarCalc rating={Math.floor(Number(data.rating))} />
             </div>
           </div>
-          <div className="flex justify-between items-center">
+          <div
+            className="flex justify-between items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="font-bold text-orange-500 text-xl">
               $ {data.caloriesPerServing}
             </div>
-            <AddToCart />
+            <AddToCart
+              cartBoolean={cartBoolean}
+              onClick={() => {
+                setCartBoolean(true), addItemToCart();
+              }}
+            />
           </div>
         </div>
       </div>
-      {showModal && <ProductModal data={data} setShowModal={setShowModal} />}
+      {showModal && (
+        <ProductModal
+          data={data}
+          setShowModal={setShowModal}
+          cartBoolean={cartBoolean}
+          setCartBoolean={setCartBoolean}
+          addItemToCart={addItemToCart}
+        />
+      )}
     </>
   );
 };

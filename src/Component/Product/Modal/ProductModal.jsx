@@ -4,7 +4,13 @@ import { LuDot } from "react-icons/lu";
 import AddToCart from "../../Button/AddToCart";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-const ProductModal = ({ data, setShowModal }) => {
+const ProductModal = ({
+  data,
+  setShowModal,
+  cartBoolean,
+  setCartBoolean,
+  addItemToCart,
+}) => {
   return (
     <div
       className="fixed inset-0 bg-gray-100/70 flex justify-center items-center"
@@ -39,7 +45,7 @@ const ProductModal = ({ data, setShowModal }) => {
             ipsam eum! Temporibus fugit adipisci, officia culpa eius inventore
             dolorum quam.
           </div>
-          <div>
+          <div className="overflow-auto flex-1">
             <div className="font-medium text-xl text-gray-700 mb-3 ">
               Ingredients:
             </div>
@@ -56,7 +62,12 @@ const ProductModal = ({ data, setShowModal }) => {
             <div className="font-bold text-orange-500 text-2xl">
               $ {data.caloriesPerServing}
             </div>
-            <AddToCart />
+            <AddToCart
+              cartBoolean={cartBoolean}
+              onClick={() => {
+                setCartBoolean(true), addItemToCart();
+              }}
+            />
           </div>
         </div>
       </div>
