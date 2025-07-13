@@ -2,6 +2,7 @@ import AddToCart from "../../Button/AddToCart";
 import StarCalc from "./StarCalc";
 import ProductModal from "../Modal/ProductModal";
 import { useState } from "react";
+import addToCart from "../../LocalStorage/addToCart";
 
 const Card = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
@@ -9,7 +10,7 @@ const Card = ({ data }) => {
 
   const addItemToCart = () => {
     if (!cartBoolean) {
-      console.log(" order is coming");
+      addToCart(data);
     }
   };
 
