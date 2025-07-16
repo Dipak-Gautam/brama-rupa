@@ -9,9 +9,11 @@ const Cart = () => {
   return (
     <div className="p-2 px-5">
       <NavBar />
-      {cartData.map((item) => (
-        <CartCard data={item} key={item.id} />
-      ))}
+      <div className="mx-5  space-y-5">
+        {cartData.map((item) => (
+          <CartCard data={item} key={item.id} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -13,3 +13,7 @@ const addToCart = (productData) => {
 };
 
 export default addToCart;
+
+// productData.quantity = 1;
+
+// console.log("product data", productData);
