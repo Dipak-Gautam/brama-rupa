@@ -1,10 +1,8 @@
-const removeFromCart = (data) => {
-  console.log("hello from remove item from cart", data);
+const removeFromCart = (data, setCartData) => {
+  const cartData = localStorage.getItem("cart1");
+  const actualData = JSON.parse(cartData);
+  const updatedData = actualData.filter((item) => item.id != data.id);
+  localStorage.setItem("cart1", JSON.stringify(updatedData));
+  setCartData(updatedData);
 };
 export default removeFromCart;
-
-//  const cartData = JSON.parse(localStorage.getItem("cart1"));
-//   console.log("cart data", cartData);
-//   const tempData = cartData.filter((item) => item.id != data.id);
-//   console.log("temp data", tempData);
-//   localStorage.setItem("cart1", JSON.stringify(tempData));
