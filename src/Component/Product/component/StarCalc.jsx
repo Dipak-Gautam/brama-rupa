@@ -7,7 +7,9 @@ const StarCalc = ({ rating }) => {
       {Array.from({ length: 5 }, (_, index) => (
         <FaStar
           key={index}
-          className={` ${index < rating ? "text-orange-400" : "text-gray-400"}`}
+          className={` ${
+            index < rating ? "text-orange-400" : "text-gray-400"
+          }   text-xs md:text-base`}
         />
       ))}
     </div>

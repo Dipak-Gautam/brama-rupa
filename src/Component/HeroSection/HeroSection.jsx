@@ -1,8 +1,15 @@
 const HeroSection = () => {
   return (
-    <div className="m-3 md:m-7">
-      <div className="bg-[url('./FoodHeroImage.jpeg')] md:h-[700px] bg-cover  rounded-lg  bg-no-repeat flex items-center py-16 md:py-10 p-10">
-        <div className="text-glow">
+    <div className="m-3 md:m-7 md:h-[700px] relative ">
+      <div className=" md:h-[700px]  flex items-center overflow-hidden    ">
+        <video
+          src="/hero-video.mp4"
+          className="w-full rounded-xl overflow-hidden mask-cover"
+          muted
+          autoPlay
+          loop
+        />
+        <div className="text-glow absolute p-10">
           <div className="text-2xl md:text-4xl lg:text-6xl font-bold text-white ">
             <p className="m-0 p-0">Order your</p>
             <p className="m-0 p-0">favorite Food here</p>

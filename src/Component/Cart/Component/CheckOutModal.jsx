@@ -1,5 +1,6 @@
 import React from "react";
 import totalAmount from "../../CoustomFunction/totalAmount";
+import UserDetails from "./UserDetails";
 
 const CheckOutModal = ({ visible, setVisible, cartData }) => {
   return (
@@ -9,7 +10,10 @@ const CheckOutModal = ({ visible, setVisible, cartData }) => {
       } fixed inset-0 backdrop-blur-sm justify-center items-center`}
       onClick={() => setVisible(false)}
     >
-      <div className="w-96 max-h-[80vh] p-5 rounded-md border border-gray-400 bg-white overflow-auto flex flex-col shadow-xl shadow-black/50">
+      <div
+        className="w-96 max-h-[80vh] p-5 rounded-md border border-gray-400 bg-white overflow-auto flex flex-col shadow-xl shadow-black/50"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="text-center font-semibold text-xl text-orange-500">
           Checkout
         </div>
@@ -29,6 +33,9 @@ const CheckOutModal = ({ visible, setVisible, cartData }) => {
             <div>Total</div>
             <div className="w-16 text-end">${totalAmount(cartData)}</div>
           </div>
+        </div>
+        <div>
+          <UserDetails />
         </div>
       </div>
     </div>
